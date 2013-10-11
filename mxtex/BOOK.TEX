@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper,openany,twoside]{book}
+%\documentclass[12pt,a4paper,openany,twoside,twocolumn]{book} ����
+\input{setup/package.tex}               %���õĺ���
+\begin{document}
+\begin{CJK*}{GBK}{song}
+\input{setup/format.tex}                                    %�ı���ʽ����
+\frontmatter                                                        %ҳ�뿪ʼ������Roman���壬��ǰ�Ժ�Ŀ¼��ǰ��
+\sloppy
+\pagenumbering{Roman}    %Roman������дҳ��,��ǰ�Ժ�Ŀ¼��ǰ��
+%-------------------------------------------------------------------------------------------
+\input{preface/cover}                                           %����
+\include{preface/intro}                                         %����
+\include{preface/preface2}                                   %ǰ��
+\include{preface/intro2}                                       %����ʦ��
+\include{preface/preface}                                     %ǰ��
+%\include{preface/c_abstract}                             %����ժҪ
+%\include{preface/e_abstract}                             %Ӣ��ժҪ
+%-------------------------------------Ŀ¼����--------------------------------------
+\setcounter{page}{1}                                            %���¿�ʼҳ��
+\titlecontents{chapter}[0em]{\hei\color{darkblue}}{\contentslabel{0em}}{\hspace*{0em}}{\dotfill \contentspage}%�����±����ɫ
+\titlecontents{section}[1em]{\vspace{.25\baselineskip}}{\thecontentslabel\quad}{}{\hspace{.5em}\dotfill\contentspage}
+\titlecontents{subsection}[2em]{\footnotesize\vspace{.25\baselineskip}}{\thecontentslabel\quad}{}{\hspace{.5em}\dotfill\contentspage}
+
+%\begin{multicols}{2}         %����
+%\tableofcontents
+%\end{multicols}              %����
+
+%------------------------------��������ȥ����Ŀ¼��ҳҳ��-----------------------------
+\makeatletter
+\let\ps@plain\ps@empty
+\makeatother
+
+\tableofcontents
+\addtocontents{toc}{\protect\begin{multicols}{2}}
+\clearpage{\pagestyle{empty}\cleardoublepage}           %ʹĿ¼�հ�Ҳȥ��ҳü
+
+
+%������ĩβ��
+%\addtocontents{toc}{\protect\end{multicols}}
+
+\mainmatter    %ǰ�Ժ�Ŀ¼ҳ���������������¿�ʼ����ҳ��
+
+%-----------------------------------���Ŀ�ʼ--------------------------------------------------
+
+%\begin{spacing}{1.5}         %���� 1.5 ���м���
+%\begin{multicols}{2}         %����
+
+\include{book/chap1}       %��һ��
+%\include{book/chap2}       %�ڶ���
+%\include{book/chap3}       %������
+%\include{book/chap4}       %������
+%\include{book/chap5}       %������
+%\include{book/chap6}       %������
+%\include{book/chap7}       %������
+%\include{book/chap8}       %�ڰ���
+%\include{book/chap9}       %�ھ���
+
+%\end{multicols}           %����
+%\end{spacing}              %���� 1.5 ���м��� ����
+
+%-----------------------------------���Ľ���--------------------------------------------------
+
+\backmatter                                     %ֹͣ��������ȥ���½�ǰ�ı��ţ�
+\include{book/answer}                   %ϰ������
+\addtocontents{toc}{\protect\end{multicols}}
+\include{reference/references}          %�ο�����
+%------------------------------------------------------��¼����------------------------------------------
+%\begin{appendix}
+%   \renewcommand{\chaptername}{��¼\Alph{chapter}}
+%   \input{appendix/chap01a}
+%\end{appendix}
+\clearpage
+\end{CJK*}
+\end{document}
