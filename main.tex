@@ -1,11 +1,23 @@
-\documentclass[11pt]{book}
+\documentclass[11pt,a4paper,openany,twoside]{book}
 \usepackage{ctex} %支持中文
 \usepackage{amsmath} %调用公式宏包
 \usepackage{graphicx} %调用插图宏包
+\usepackage{verbatim} %调用抄录宏包
 
 \begin{document}
-\include{cover}
-%\pagenumbering{Roman} %罗马数字页码
+\frontmatter
+\pagenumbering{Roman} %罗马数字页码
 %\pagenumbering{arabic} %阿拉伯数字页码
+\include{preface/cover}
+\include{preface/intro}
 
+\mainmatter
+%\pagenumbering{Roman} %罗马数字页码
+\pagenumbering{arabic} %阿拉伯数字页码
+\include{book/clanguage}
+\include{book/linuxbase}
+
+
+\backmatter
 \end{document}
+
