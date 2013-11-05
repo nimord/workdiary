@@ -4,3 +4,12 @@
 \begin{verbatim}
 awk '!a[$0]++'  filename
 \end{verbatim}
+
+\section{Virtualbox的相关问题}
+解决安装Virtualbox后无法运行:/etc/init.d/vboxdrv setup \\
+\begin{itemize}
+\item 安装与当前版本相同的~kernel-headers~和~kernel-devel~ \\
+\item 安转~gcc \\
+\item 安装~dkms \\
+\end{itemize} 
+以上情况一般可以解决~virtualbox~的问题，如若不行安装~kernel-PAE-devel
